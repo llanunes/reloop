@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ecoponto",
+    "name": "ReLoop",
     "slug": "ecoponto",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,10 +16,41 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.anonymous.ecoponto"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "O ReLoop usa a câmera para ler o QR code do dispositivo de coleta."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O ReLoop acessa suas fotos para enviar a imagem dos itens descartados.",
+          "cameraPermission": "O ReLoop usa a câmera para fotografar os itens descartados."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "O ReLoop usa sua localização para mostrar ecopontos próximos e validar o descarte."
+        }
+      ]
+    ],
+    "scheme": "reloop"
   }
 }
